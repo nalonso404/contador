@@ -64,3 +64,4 @@ En la carpeta assets hay una imagen 'assets/ufo.png' carga esta imagen en el jue
 
 Aquí tienes un ejemplo de animación
 https://phaser.io/examples/v2/tweens/tween-to
+# contador
