@@ -8,8 +8,8 @@ const TEXT_ALIGNMENT = "center";
 
 let counter = 0;
 let result;
-let sumSquare
-let substractSquare
+let sumSquare;
+let substractSquare;
 
 
 const game = new Phaser.Game(
@@ -28,7 +28,7 @@ function preload() {
 }
 
 function create() {
-   //rectangulo resultado
+
     let rectangle = game.add.graphics();
     rectangle.beginFill(0xffffff);
     rectangle.drawRect(250, 150, 300,100);
@@ -78,30 +78,30 @@ function create() {
         createEvent()
     
 }
+function sumEvent () {
+    sumSquare.inputEnabled = true;
+    sumSquare.input.useHandCursor = true;
+    sumSquare.events.onInputDown.add(sumHandler, this);
+}
+
+function substractEvent () {
+    substractSquare.inputEnabled = true;
+    substractSquare.input.useHandCursor = true;
+    substractSquare.events.onInputDown.add(substractHandler, this);
+}
 
 function createEvent () {
     if (counter === 0) {
-        sumSquare.inputEnabled = true;
-        sumSquare.input.useHandCursor = true;
-        sumSquare.events.onInputDown.add(sumHandler, this);
-
+        sumEvent ()
         substractSquare.inputEnabled = false;
 
     } else if (counter === 10){
         sumSquare.inputEnabled = false;
-        
-        substractSquare.inputEnabled = true;
-        substractSquare.input.useHandCursor = true;
-        substractSquare.events.onInputDown.add(substractHandler, this);
+        substractEvent ()
     }
     else {
-        sumSquare.inputEnabled = true;
-        sumSquare.input.useHandCursor = true;
-        sumSquare.events.onInputDown.add(sumHandler, this);
-
-        substractSquare.inputEnabled = true;
-        substractSquare.input.useHandCursor = true;
-        substractSquare.events.onInputDown.add(substractHandler, this);
+        sumEvent ()
+        substractEvent ()
     }
     
 }
