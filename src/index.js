@@ -145,10 +145,6 @@ function ufoAppears() {
     game.add.tween(ufo).to( {x:200, y: game.world.centerY}, 4000, Phaser.Easing.Bounce.Out, true);
 }
 
-function ufoFriend () {
-    createSprite()
-    game.add.tween(ufo).to( { x:800,y: 200 }, 4000, Phaser.Easing.Bounce.Out, true);
-}
 
 function update() {
 
