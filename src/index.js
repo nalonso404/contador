@@ -10,6 +10,7 @@ let counter = 0;
 let result;
 let sumSquare;
 let substractSquare;
+let ufo;
 
 
 const style = {font: TEXT_FONT,fill:"#ff0044", align:TEXT_ALIGNMENT}
@@ -26,10 +27,13 @@ const game = new Phaser.Game(
     });
 
 function preload() {
-
+    game.load.image('ufo', 'src/assets/ufo.png')
 }
 
 function create() {
+
+    game.stage.backgroundColor = '#e3e4e5';
+
 
     let rectangle = game.add.graphics();
     rectangle.beginFill(0xffffff);
@@ -84,12 +88,14 @@ function sumEvent () {
     sumSquare.inputEnabled = true;
     sumSquare.input.useHandCursor = true;
     sumSquare.events.onInputDown.add(sumHandler, this);
+    
 }
 
 function substractEvent () {
     substractSquare.inputEnabled = true;
     substractSquare.input.useHandCursor = true;
     substractSquare.events.onInputDown.add(substractHandler, this);
+    
 }
 
 function createEvent () {
@@ -110,7 +116,6 @@ function createEvent () {
         result.setStyle({font: TEXT_FONT,fill:"#000", align:TEXT_ALIGNMENT})
         sumSquare.tint = 0xffffff
         substractSquare.tint = 0xffffff
-
     }
     
 }
@@ -119,14 +124,32 @@ function sumHandler() {
     counter ++
     result.text = counter;
     createEvent()
+    ufoAppears()
 
 }
 function substractHandler () {
     counter --
     result.text=counter;
     createEvent()
+    ufoFriend()
 
 }
+
+function createSprite () {
+    ufo= game.add.sprite(game.world.centerX,-200,'ufo')
+    ufo.anchor.set(0.5,0.5)
+}
+
+function ufoAppears() {
+    createSprite()
+    game.add.tween(ufo).to( {x:200, y: game.world.centerY}, 4000, Phaser.Easing.Bounce.Out, true);
+}
+
+function ufoFriend () {
+    createSprite()
+    game.add.tween(ufo).to( { x:800,y: 200 }, 4000, Phaser.Easing.Bounce.Out, true);
+}
+
 function update() {
 
 }
