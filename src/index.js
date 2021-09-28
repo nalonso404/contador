@@ -96,13 +96,13 @@ function createEvent () {
     if (counter === 0) {
         sumEvent ()
         substractSquare.inputEnabled = false;
-        substractSquare.tint = 0xff0000
+        substractSquare.tint = 0x9b9b9b
 
     } else if (counter === 10){
         sumSquare.inputEnabled = false;
         substractEvent ()
         result.setStyle(style)
-        sumSquare.tint = 0xff0000
+        sumSquare.tint = 0x9b9b9b
     }
     else {
         sumEvent ()
