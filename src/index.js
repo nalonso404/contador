@@ -2,7 +2,7 @@ import 'phaser-ce';
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 const TEXT_FONT = "65px Arial";
-const TEXT_COLOR = "#ff0044";
+const TEXT_COLOR = "#000";
 const TEXT_ALIGNMENT = "center";
 
 
@@ -11,6 +11,8 @@ let result;
 let sumSquare;
 let substractSquare;
 
+
+const style = {font: TEXT_FONT,fill:"#ff0044", align:TEXT_ALIGNMENT}
 
 const game = new Phaser.Game(
     GAME_WIDTH,
@@ -94,14 +96,21 @@ function createEvent () {
     if (counter === 0) {
         sumEvent ()
         substractSquare.inputEnabled = false;
+        substractSquare.tint = 0xff0000
 
     } else if (counter === 10){
         sumSquare.inputEnabled = false;
         substractEvent ()
+        result.setStyle(style)
+        sumSquare.tint = 0xff0000
     }
     else {
         sumEvent ()
         substractEvent ()
+        result.setStyle({font: TEXT_FONT,fill:"#000", align:TEXT_ALIGNMENT})
+        sumSquare.tint = 0xffffff
+        substractSquare.tint = 0xffffff
+
     }
     
 }
