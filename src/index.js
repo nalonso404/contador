@@ -63,7 +63,7 @@ function create() {
     sumSquare.drawRect(250, 300, 100,100);
     sumSquare.endFill();
 
-    const sumOperator= game.add.text(
+    const sumOperator = game.add.text(
         250,
         300,
         "+",
@@ -78,7 +78,7 @@ function create() {
     substractSquare.drawRect(450, 300, 100,100);
     substractSquare.endFill();
 
-    const substractOperator= game.add.text(
+    const substractOperator = game.add.text(
         470,
         270,
         "-",
@@ -135,18 +135,18 @@ function sumHandler() {
 }
 function substractHandler() {
     counter --
-    result.text=counter;
+    result.text = counter;
     createEvent()
     ufoAppears()
 }
 
 function createSprite() {
-    ufo= game.add.sprite(game.world.centerX,-200,'ufo');
+    ufo = game.add.sprite(game.world.centerX,-200,'ufo');
     ufo.anchor.set(0.5,0.5);
 }
 
 function randomNumber(min,max) {
-    const randomNumber= Math.floor(Math.random()* (max-min+1)+min);
+    const randomNumber = Math.floor(Math.random()* (max-min+1)+min);
     return randomNumber;
 }
 
