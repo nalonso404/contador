@@ -1,3 +1,10 @@
+# RESULTADO
+
+https://user-images.githubusercontent.com/54322993/135242768-f40c7ba9-bf3e-44a6-ab7e-98d7727304e8.mov
+
+
+
+
 # PRUEBA TÉCNICA
 
 En esta prueba nos gustaría que creases un contador muy simple utilizando Phaser-ce (Edición de la comunidad de Phaser 2)
