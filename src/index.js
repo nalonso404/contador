@@ -137,8 +137,7 @@ function substractHandler() {
     counter --
     result.text=counter;
     createEvent()
-    ufoFriend()
-
+    ufoAppears()
 }
 
 function createSprite() {
@@ -146,14 +145,23 @@ function createSprite() {
     ufo.anchor.set(0.5,0.5);
 }
 
-function ufoAppears() {
-    createSprite()
-    game.add.tween(ufo).to( {x:200, y: game.world.centerY}, 4000, Phaser.Easing.Bounce.Out, true);
+function randomNumber(min,max) {
+    const randomNumber= Math.floor(Math.random()* (max-min+1)+min);
+    return randomNumber;
 }
 
-function ufoFriend() {
+function ufoAppears() {
     createSprite()
-    game.add.tween(ufo).to( { x:600,y: 200 }, 4000, Phaser.Easing.Bounce.Out, true);
+    game.add.tween(ufo).to(
+        {
+            x:randomNumber(0,800),
+            y:randomNumber(0,600)
+        }, 
+        4000, 
+        Phaser.Easing.Bounce.Out,
+        true
+    );
+    
 }
 
 function update() {
